@@ -10,36 +10,40 @@ import {
 import { Menu } from "lucide-react"
 import SignOutin from "./SignOut-In"
 import Cart from "./Cart"
-import Filter from "./Filter"
+import PSearch from "./Search"
 import Settings from "./Settings"
 
 
 export default function SheetMenu() {
 
   return (
-    <Sheet>
-      <SheetTrigger asChild>      
-        <div className="flex items-center gap-1">
-            Menu
-            <Button variant="outline"><Menu /></Button>
-        </div>
-      </SheetTrigger>
+    <>
+      {/* Mobile */}
       
-      <SheetContent>
-        <div className="flex items-center justify-between px-3 py-5">
-          <span className="text-[#008ecc] text-lg font-[family-name:var(--font-carter)] ">GS MegaMart</span>
-          <SheetClose asChild>
-            <Button variant="outline" className="w-fit text-">x</Button>
-          </SheetClose>
-        </div>
+        <Sheet>
+          <SheetTrigger asChild>
+            <div className="flex items-center gap-1">
+                Menu
+                <Button variant="outline"><Menu /></Button>
+            </div>
+          </SheetTrigger>
+      
+          <SheetContent>
+            <div className="flex items-center justify-between px-3 py-5">
+              <span className="text-[#008ecc] text-xl font-[family-name:var(--font-carter)] ">GS MegaMart</span>
+              <span className="sr-only">GS MegaMart Logo</span>
 
-
-        <Filter />
-        <SignOutin />
-        <Cart />
-        <Settings />
-
-      </SheetContent>
-    </Sheet>
+              <SheetClose asChild>
+                <Button variant="outline" className="w-fit">x</Button>
+              </SheetClose>
+            </div>
+            <PSearch />
+            <SignOutin />
+            <Cart />
+            <Settings />
+          </SheetContent>
+        </Sheet>
+      
+    </>
   )
 }
